@@ -73,6 +73,44 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        .social-links {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .social-btn.facebook {
+            background-color: #1877F2;
+        }
+
+        .social-btn.facebook:hover {
+            background-color: #145dbf;
+        }
+
+        .social-btn.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-btn.instagram:hover {
+            opacity: 0.9;
+        }
     </style>
 </head>
 
@@ -85,7 +123,14 @@
 
         <div class="zoom-box">
             <strong>Copia y guarda tu enlace de acceso:</strong>
-            <span class="link-text">https://us06web.zoom.us/j/82393428049?pwd=F4K4St37yx4XpGtBDdKzbcrxPk5isD.1</span>
+            <span id="zoomLink"
+                class="link-text">https://us06web.zoom.us/j/82393428049?pwd=F4K4St37yx4XpGtBDdKzbcrxPk5isD.1</span>
+
+            <button onclick="copiarEnlace()"
+                style="margin-top: 15px; background: #003366; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; transition: 0.3s;">📋
+                Copiar Enlace</button>
+            <span id="copyMsg"
+                style="display: none; color: #28a745; margin-left: 10px; font-weight: bold; font-size: 14px;">¡Copiado!</span>
 
             <div class="access-data">
                 <strong>Datos de acceso manual:</strong><br>
@@ -96,9 +141,33 @@
 
         <p>Te recomendamos guardar esta información en tu calendario o notas personales para el día del evento.</p>
 
-        <a href="index.html" class="footer-link">← Volver a la página anterior</a>
+        <div class="social-links">
+            <a href="https://www.facebook.com/abogadasbamali/" target="_blank" class="social-btn facebook">
+                📘 Síguenos en Facebook
+            </a>
+            <a href="https://www.instagram.com/abogadasbamali/" target="_blank" class="social-btn instagram">
+                📸 Síguenos en Instagram
+            </a>
+        </div>
+
+        <a href="https://bamali.mx/conferencia/" class="footer-link">← Volver a la página anterior</a>
     </div>
 
+    <script>
+        function copiarEnlace() {
+            var enlace = document.getElementById("zoomLink").innerText;
+            navigator.clipboard.writeText(enlace).then(function () {
+                var copyMsg = document.getElementById("copyMsg");
+                copyMsg.style.display = "inline";
+                setTimeout(function () {
+                    copyMsg.style.display = "none";
+                }, 2000);
+            }).catch(function (err) {
+                console.error('Error al copiar el texto: ', err);
+                alert("No se pudo copiar automáticamente. Por favor selecciónalo y cópialo manualmente.");
+            });
+        }
+    </script>
 </body>
 
 </html>

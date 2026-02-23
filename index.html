@@ -101,6 +101,40 @@
             transform: scale(1.02);
         }
 
+        .registro-form {
+            background: #f9fbff;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #cce0ff;
+            text-align: left;
+        }
+
+        .registro-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #003366;
+            font-size: 14px;
+        }
+
+        .registro-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .registro-form input:focus {
+            outline: none;
+            border-color: #003366;
+            box-shadow: 0 0 5px rgba(0, 51, 102, 0.2);
+        }
+
         footer {
             margin-top: 40px;
             font-size: 13px;
@@ -115,12 +149,12 @@
 
     <div class="container">
         <header>
-            <img src="logo.png" alt="Bamali Abogadas" class="logo-img">
             <h1>Conferencia Magistral</h1>
             <div class="ponente">Mtra. Sonia Maricela Santillán Montoya</div>
         </header>
 
-        <img src="conferencia.jpg" alt="Conferencia Responsabilidades Familiares" class="conferencia-img">
+        <img src="https://bamali.mx/wp-content/uploads/2026/02/conferencia.jpg"
+            alt="Conferencia Responsabilidades Familiares" class="conferencia-img">
 
         <div class="details">
             <h2>Tema: "PERSONAS TRABAJADORAS CON RESPONSABILIDADES FAMILIARES"</h2>
@@ -131,7 +165,58 @@
                 confirmar tu asistencia, recibirás el enlace de acceso.</p>
         </div>
 
-        <a href="gracias.html" class="btn-asistir">¡QUIERO ASISTIR!</a>
+        <form id="registroForm" class="registro-form">
+            <h3 style="color: #003366; margin-top: 0; margin-bottom: 15px; font-size: 18px; text-align: center;">
+                Regístrate para obtener el enlace de Zoom</h3>
+
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required placeholder="Tu correo electrónico">
+
+            <input type="hidden" name="_subject" value="Nuevo registro para la conferencia">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
+            <button type="submit" class="btn-asistir" id="submitBtn"
+                style="width: 100%; border: none; cursor: pointer;">¡QUIERO ASISTIR!</button>
+            <p id="formStatus"
+                style="display: none; text-align: center; margin-top: 15px; font-weight: bold; color: #003366;">
+                Procesando registro...</p>
+        </form>
+
+        <script>
+            document.getElementById('registroForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var btn = document.getElementById('submitBtn');
+                var status = document.getElementById('formStatus');
+
+                btn.style.display = 'none';
+                status.style.display = 'block';
+
+                var formData = new FormData(this);
+
+                fetch('https://formsubmit.co/ajax/conferencias@bamali.mx', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        window.location.href = 'https://bamali.mx/gracias/';
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        status.style.color = '#d9534f';
+                        status.textContent = 'Hubo un error al procesar tu registro. Por favor, intenta de nuevo.';
+                        btn.style.display = 'block';
+                    });
+            });
+        </script>
 
         <footer>
             © 2026 Bamali Abogadas Laborales | <a href="http://bamali.com.mx" target="_blank"

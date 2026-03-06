@@ -1,0 +1,416 @@
+<!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  BAMALI – PÁGINA DE GRACIAS / CONFIRMACIÓN 2026      ║
+  ║  Para: bamali.mx/dia-de-la-mujer-gracias/            ║
+  ║                                                      ║
+  ║  INSTRUCCIONES WORDPRESS:                            ║
+  ║  1. Edita la página en WordPress                     ║
+  ║  2. Agrega un bloque "HTML personalizado"            ║
+  ║  3. Pega TODO este código dentro del bloque          ║
+  ║  4. Guarda y publica                                 ║
+  ╚══════════════════════════════════════════════════════╝
+-->
+
+<style>
+    /* ── Ocultar título automático de WordPress ── */
+    .entry-title,
+    .page-title,
+    h1.entry-title,
+    h2.entry-title,
+    .page-header,
+    .page-header .page-title,
+    .wp-block-post-title,
+    header.entry-header,
+    .entry-header,
+    .post-title,
+    .single-title,
+    .the-title,
+    .elementor-page-title,
+    .elementor-widget-theme-page-title {
+        display: none !important;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    /* ── Reset dentro del contenedor ── */
+    .bm-gracias * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .bm-gracias {
+        --bpd: #3b1a5a;
+        --bpm: #6b2fa0;
+        --bpl: #9b59d0;
+        --gold: #c9a227;
+        --gl: #f0d080;
+        --rose: #c0325a;
+        font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+        background: linear-gradient(135deg, #1a0a2e 0%, #3b1a5a 50%, #6b2fa0 100%);
+        min-height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 54px 18px;
+        border-radius: 12px;
+    }
+
+    /* ── Card principal ── */
+    .bm-g-card {
+        max-width: 600px;
+        width: 100%;
+        background: #fff;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 32px 90px rgba(0, 0, 0, .40);
+        animation: bgFadeUp .55s cubic-bezier(.22, .68, 0, 1.2) both;
+    }
+
+    @keyframes bgFadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(26px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* ── Header de la card ── */
+    .bm-g-top {
+        background: linear-gradient(135deg, #3b1a5a 0%, #9b59d0 100%);
+        padding: 48px 38px 40px;
+        text-align: center;
+        position: relative;
+    }
+
+    .bm-g-top::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, #c9a227, #f0d080, #c9a227);
+    }
+
+    .bm-g-icon {
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #c0325a 0%, #e05580 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        margin: 0 auto 22px;
+        box-shadow: 0 10px 36px rgba(192, 50, 90, .50);
+        animation: bgPop .5s .3s cubic-bezier(.22, .68, 0, 1.35) both;
+    }
+
+    @keyframes bgPop {
+        from {
+            opacity: 0;
+            transform: scale(.4);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .bm-g-top h1 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    .bm-g-top .bm-g-sub {
+        color: rgba(255, 255, 255, .78);
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    /* ── Body de la card ── */
+    .bm-g-body {
+        padding: 40px 38px 34px;
+    }
+
+    /* ── Recordatorio del evento ── */
+    .bm-g-reminder {
+        background: linear-gradient(135deg, #f8f3ff, #fff5fb);
+        border: 1px solid rgba(107, 47, 160, .18);
+        border-radius: 16px;
+        padding: 22px 26px;
+        margin-bottom: 30px;
+    }
+
+    .bm-gr-label {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #9b59d0;
+        margin-bottom: 12px;
+    }
+
+    .bm-gr-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #3b1a5a;
+        margin-bottom: 7px;
+    }
+
+    .bm-gr-row:last-child {
+        margin-bottom: 0;
+    }
+
+    /* ── Steps ── */
+    .bm-g-steps-title {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #9b59d0;
+        margin-bottom: 22px;
+    }
+
+    .bm-g-step {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 28px;
+        align-items: flex-start;
+    }
+
+    .bm-g-step-num {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #6b2fa0, #9b59d0);
+        color: #fff;
+        font-weight: 800;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 1px;
+        box-shadow: 0 4px 16px rgba(107, 47, 160, .35);
+    }
+
+    .bm-g-stitle {
+        font-weight: 700;
+        color: #3b1a5a;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .bm-g-sdesc {
+        font-size: 14px;
+        color: #777;
+        line-height: 1.65;
+    }
+
+    .bm-g-sdesc strong {
+        color: #6b2fa0;
+    }
+
+    /* Caja datos bancarios */
+    .bm-bank-box {
+        background: #f8f3ff;
+        border: 1px solid rgba(107, 47, 160, .15);
+        padding: 13px 17px;
+        border-radius: 10px;
+        display: inline-block;
+        line-height: 2;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    /* ── Divider ── */
+    .bm-g-hr {
+        border: none;
+        border-top: 1px solid #ececec;
+        margin: 28px 0 26px;
+    }
+
+    /* ── Social ── */
+    .bm-g-social {
+        text-align: center;
+    }
+
+    .bm-g-social-label {
+        font-size: 13px;
+        color: #aaa;
+        margin-bottom: 16px;
+    }
+
+    .bm-g-social-links {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .bm-g-sbtn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 22px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 13px;
+        transition: opacity .22s, transform .22s;
+    }
+
+    .bm-g-sbtn-fb {
+        background: #1877F2;
+    }
+
+    .bm-g-sbtn-ig {
+        background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+    }
+
+    .bm-g-sbtn:hover {
+        opacity: .88;
+        transform: translateY(-2px);
+    }
+
+    /* ── Volver ── */
+    .bm-g-back {
+        display: block;
+        text-align: center;
+        margin-top: 24px;
+        color: #9b59d0;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        transition: color .2s;
+    }
+
+    .bm-g-back:hover {
+        color: #3b1a5a;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+        .bm-g-top {
+            padding: 36px 22px 32px;
+        }
+
+        .bm-g-body {
+            padding: 28px 22px 26px;
+        }
+
+        .bm-g-top h1 {
+            font-size: 25px;
+        }
+
+        .bm-gracias {
+            padding: 30px 12px;
+        }
+    }
+</style>
+
+<!-- GOOGLE FONTS (por si el tema no las carga) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+<div class="bm-gracias">
+    <div class="bm-g-card">
+
+        <!-- ── HEADER ── -->
+        <div class="bm-g-top">
+            <div class="bm-g-icon">🌸</div>
+            <h1>¡Registro Confirmado!</h1>
+            <p class="bm-g-sub">
+                Tu solicitud fue recibida con éxito.<br>
+                Sigue los pasos a continuación para asegurar tu lugar.
+            </p>
+        </div>
+
+        <!-- ── BODY ── -->
+        <div class="bm-g-body">
+
+            <!-- Recordatorio -->
+            <div class="bm-g-reminder">
+                <div class="bm-gr-label">📌 Recuerda el evento</div>
+                <div class="bm-gr-row">📅&nbsp;<span>Jueves <strong>20 de marzo de 2026</strong></span></div>
+                <div class="bm-gr-row">⏰&nbsp;<span>9:00 AM (puntual)</span></div>
+                <div class="bm-gr-row">📍&nbsp;<span>Sinaloa 113, Colonia Roma, CDMX</span></div>
+                <div class="bm-gr-row">🎤&nbsp;<span>Mtra. Reyna López Rodríguez</span></div>
+            </div>
+
+            <!-- Pasos -->
+            <div class="bm-g-steps-title">Pasos para confirmar tu lugar</div>
+
+            <div class="bm-g-step">
+                <div class="bm-g-step-num">1</div>
+                <div>
+                    <div class="bm-g-stitle">Realiza tu pago</div>
+                    <div class="bm-g-sdesc">
+                        Transfiere a la cuenta de <strong>BBVA Bancomer</strong> (Cuenta de Cheques):<br>
+                        <span class="bm-bank-box">
+                            🏦 <strong>CLABE:</strong> 012 180 0011 9826 9123<br>
+                            🔢 <strong>No. Cuenta:</strong> 011 982 6912
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bm-g-step">
+                <div class="bm-g-step-num">2</div>
+                <div>
+                    <div class="bm-g-stitle">Envía tu comprobante</div>
+                    <div class="bm-g-sdesc">
+                        Manda el comprobante a
+                        <a href="mailto:eventos@bamali.mx"
+                            style="color:#6b2fa0;font-weight:700;text-decoration:none;">eventos@bamali.mx</a>.
+                        Esto confirma tu lugar en el evento.
+                    </div>
+                </div>
+            </div>
+
+            <div class="bm-g-step">
+                <div class="bm-g-step-num">3</div>
+                <div>
+                    <div class="bm-g-stitle">¡Listo! Te esperamos el 20 de marzo</div>
+                    <div class="bm-g-sdesc">
+                        Recibirás una confirmación una vez validado tu pago.
+                        ¡Nos vemos en el desayuno!
+                    </div>
+                </div>
+            </div>
+
+            <hr class="bm-g-hr">
+
+            <!-- Redes -->
+            <div class="bm-g-social">
+                <p class="bm-g-social-label">Síguenos para no perderte ninguna novedad del evento</p>
+                <div class="bm-g-social-links">
+                    <a href="https://www.facebook.com/abogadasbamali/" target="_blank" rel="noopener noreferrer"
+                        class="bm-g-sbtn bm-g-sbtn-fb">📘 Facebook</a>
+                    <a href="https://www.instagram.com/abogadasbamali/" target="_blank" rel="noopener noreferrer"
+                        class="bm-g-sbtn bm-g-sbtn-ig">📸 Instagram</a>
+                </div>
+            </div>
+
+            <a href="https://bamali.mx/confediadela-mujer/" class="bm-g-back">← Volver al evento</a>
+
+        </div><!-- /body -->
+    </div><!-- /card -->
+</div><!-- /bm-gracias -->

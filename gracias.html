@@ -4,170 +4,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Exitoso - Bamali</title>
+    <title>¡Registro Confirmado! – Desayuno Bamali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
-        /* Estilo limpio y profesional para Bamali */
+        :root {
+            --purple-dark: #3b1a5a;
+            --purple-mid: #6b2fa0;
+            --purple-light: #9b59d0;
+            --gold: #c9a227;
+            --gold-light: #f0d080;
+            --rose: #c0325a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            padding: 50px 20px;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a0a2e 0%, #3b1a5a 50%, #6b2fa0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
         }
 
         .card {
-            max-width: 550px;
-            margin: auto;
+            max-width: 580px;
+            width: 100%;
             background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
         }
 
-        h1 {
-            color: #003366;
-            font-size: 28px;
-            margin-bottom: 20px;
+        .card-top {
+            background: linear-gradient(135deg, var(--purple-dark), var(--purple-light));
+            padding: 44px 40px 36px;
+            text-align: center;
+            position: relative;
         }
 
-        p {
-            color: #444;
-            font-size: 16px;
-            margin-bottom: 20px;
+        .card-top::after {
+            content: '';
+            position: absolute;
+            bottom: -0px;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
         }
 
-        .zoom-box {
-            background: #f0f7ff;
-            padding: 25px;
-            border-radius: 8px;
-            margin: 30px 0;
-            border: 2px dashed #003366;
-            text-align: left;
+        .checkmark {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--rose), #e05580);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 30px rgba(192, 50, 90, 0.5);
         }
 
-        .link-text {
-            background: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
-            display: block;
-            word-break: break-all;
-            font-family: monospace;
-            font-size: 14px;
-            margin-top: 10px;
-            color: #003366;
+        .card-top h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
         }
 
-        .access-data {
-            margin-top: 20px;
+        .card-top p {
+            color: rgba(255, 255, 255, 0.75);
             font-size: 15px;
-            color: #333;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
         }
 
-        .footer-link {
-            display: block;
-            margin-top: 30px;
-            color: #003366;
+        .card-body {
+            padding: 40px;
+        }
+
+        .steps-title {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--purple-light);
+            margin-bottom: 22px;
+        }
+
+        .step {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 28px;
+            align-items: flex-start;
+        }
+
+        .step-num {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple-mid), var(--purple-light));
+            color: white;
+            font-weight: 800;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-content .stitle {
+            font-weight: 700;
+            color: var(--purple-dark);
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .step-content .sdesc {
             font-size: 14px;
-            text-decoration: none;
-            font-weight: bold;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        .step-content .sdesc strong {
+            color: var(--purple-mid);
+        }
+
+        .event-reminder {
+            background: linear-gradient(135deg, #f8f3ff, #fff5fb);
+            border: 1px solid rgba(107, 47, 160, 0.15);
+            border-radius: 14px;
+            padding: 22px 26px;
+            margin-bottom: 28px;
+        }
+
+        .event-reminder .remind-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--purple-light);
+            margin-bottom: 12px;
+        }
+
+        .event-reminder .remind-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--purple-dark);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .event-reminder .remind-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .social-section {
+            border-top: 1px solid #eee;
+            padding-top: 24px;
+            text-align: center;
+        }
+
+        .social-section p {
+            font-size: 13px;
+            color: #aaa;
+            margin-bottom: 16px;
         }
 
         .social-links {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 14px;
         }
 
         .social-btn {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
+            gap: 8px;
             text-decoration: none;
             color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: bold;
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 13px;
+            transition: 0.25s;
+        }
+
+        .social-btn.fb {
+            background: #1877F2;
+        }
+
+        .social-btn.ig {
+            background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+        }
+
+        .social-btn:hover {
+            opacity: 0.88;
+            transform: translateY(-2px);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 24px;
+            color: var(--purple-light);
+            text-decoration: none;
             font-size: 14px;
-            transition: 0.3s;
+            font-weight: 600;
+            transition: color 0.2s;
         }
 
-        .social-btn.facebook {
-            background-color: #1877F2;
-        }
-
-        .social-btn.facebook:hover {
-            background-color: #145dbf;
-        }
-
-        .social-btn.instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        }
-
-        .social-btn.instagram:hover {
-            opacity: 0.9;
+        .back-link:hover {
+            color: var(--purple-dark);
         }
     </style>
 </head>
 
 <body>
-
     <div class="card">
-        <h1>¡Registro Confirmado!</h1>
-        <p>Gracias por tu interés en la conferencia de la <strong>Mtra. Sonia Maricela Santillán</strong>. Tu lugar está
-            asegurado.</p>
+        <div class="card-top">
+            <div class="checkmark">🌸</div>
+            <h1>¡Registro Confirmado!</h1>
+            <p>Tu solicitud fue recibida con éxito. Sigue los pasos para asegurar tu lugar.</p>
+        </div>
 
-        <div class="zoom-box">
-            <strong>Copia y guarda tu enlace de acceso:</strong>
-            <span id="zoomLink"
-                class="link-text">https://us06web.zoom.us/j/82393428049?pwd=F4K4St37yx4XpGtBDdKzbcrxPk5isD.1</span>
+        <div class="card-body">
 
-            <button onclick="copiarEnlace()"
-                style="margin-top: 15px; background: #003366; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; transition: 0.3s;">📋
-                Copiar Enlace</button>
-            <span id="copyMsg"
-                style="display: none; color: #28a745; margin-left: 10px; font-weight: bold; font-size: 14px;">¡Copiado!</span>
-
-            <div class="access-data">
-                <strong>Datos de acceso manual:</strong><br>
-                🆔 ID de reunión: 823 9342 8049<br>
-                🔑 Código de acceso: 429837
+            <div class="event-reminder">
+                <div class="remind-label">📌 Recuerda el evento</div>
+                <div class="remind-row">📅&nbsp; <span>Jueves <strong>20 de marzo de 2026</strong></span></div>
+                <div class="remind-row">⏰&nbsp; <span>9:00 AM (puntual)</span></div>
+                <div class="remind-row">📍&nbsp; <span>Sinaloa 113, Colonia Roma, CDMX</span></div>
+                <div class="remind-row">🎤&nbsp; <span>Mtra. Reyna López Rodríguez</span></div>
             </div>
+
+            <div class="steps-title">Pasos a seguir para confirmar tu lugar</div>
+
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <div class="stitle">Realiza tu pago</div>
+                    <div class="sdesc">
+                        Transfiere a la cuenta de <strong>BBVA Bancomer</strong> (Cuenta de Cheques):<br><br>
+                        <span
+                            style="background:#f8f3ff;padding:10px 14px;border-radius:8px;display:inline-block;line-height:2;font-size:14px;">
+                            🏦 <strong>CLABE:</strong> 012 180 0011 9826 9123<br>
+                            🔢 <strong>No. Cuenta:</strong> 011 982 6912
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <div class="stitle">Envía tu comprobante</div>
+                    <div class="sdesc">Manda el comprobante de pago a <a href="mailto:eventos@bamali.mx"
+                            style="color:var(--purple-mid);font-weight:700;text-decoration:none;">eventos@bamali.mx</a>.
+                        Esto confirma tu lugar en el evento.</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <div class="stitle">¡Listo! Te esperamos el 20 de marzo</div>
+                    <div class="sdesc">Recibirás una confirmación una vez validado tu pago. ¡Nos vemos en el desayuno!
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-section">
+                <p>Síguenos para no perderte ninguna novedad del evento</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/abogadasbamali/" target="_blank" class="social-btn fb">
+                        📘 Facebook
+                    </a>
+                    <a href="https://www.instagram.com/abogadasbamali/" target="_blank" class="social-btn ig">
+                        📸 Instagram
+                    </a>
+                </div>
+            </div>
+
+            <a href="https://bamali.mx" class="back-link">← Volver a bamali.mx</a>
         </div>
-
-        <p>Te recomendamos guardar esta información en tu calendario o notas personales para el día del evento.</p>
-
-        <div class="social-links">
-            <a href="https://www.facebook.com/abogadasbamali/" target="_blank" class="social-btn facebook">
-                📘 Síguenos en Facebook
-            </a>
-            <a href="https://www.instagram.com/abogadasbamali/" target="_blank" class="social-btn instagram">
-                📸 Síguenos en Instagram
-            </a>
-        </div>
-
-        <a href="https://bamali.mx/conferencia/" class="footer-link">← Volver a la página anterior</a>
     </div>
-
-    <script>
-        function copiarEnlace() {
-            var enlace = document.getElementById("zoomLink").innerText;
-            navigator.clipboard.writeText(enlace).then(function () {
-                var copyMsg = document.getElementById("copyMsg");
-                copyMsg.style.display = "inline";
-                setTimeout(function () {
-                    copyMsg.style.display = "none";
-                }, 2000);
-            }).catch(function (err) {
-                console.error('Error al copiar el texto: ', err);
-                alert("No se pudo copiar automáticamente. Por favor selecciónalo y cópialo manualmente.");
-            });
-        }
-    </script>
 </body>
 
 </html>

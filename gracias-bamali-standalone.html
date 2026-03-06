@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Registro Confirmado! – Desayuno Bamali</title>
+    <meta name="description"
+        content="Tu registro al Desayuno de Mujeres Bamali ha sido recibido. Sigue los pasos para confirmar tu lugar.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ────────────────────────────────────────
+           RESET & VARIABLES
+        ──────────────────────────────────────── */
+        :root {
+            --purple-dark: #3b1a5a;
+            --purple-mid: #6b2fa0;
+            --purple-light: #9b59d0;
+            --gold: #c9a227;
+            --gold-light: #f0d080;
+            --rose: #c0325a;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ────────────────────────────────────────
+           PAGE WRAPPER
+           Centra la tarjeta en cualquier contexto
+           (página de WP, iframe, standalone, etc.)
+        ──────────────────────────────────────── */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a0a2e 0%, #3b1a5a 50%, #6b2fa0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 20px;
+        }
+
+        /* ────────────────────────────────────────
+           CARD
+        ──────────────────────────────────────── */
+        .bamali-gracias-card {
+            max-width: 600px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 32px 90px rgba(0, 0, 0, 0.40);
+            animation: bamali-fadeUp 0.55s cubic-bezier(.22, .68, 0, 1.2) both;
+        }
+
+        @keyframes bamali-fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── Card Header ── */
+        .bamali-card-top {
+            background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple-light) 100%);
+            padding: 48px 40px 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .bamali-card-top::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+        }
+
+        .bamali-checkmark {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--rose) 0%, #e05580 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 22px;
+            box-shadow: 0 10px 36px rgba(192, 50, 90, 0.50);
+            animation: bamali-pop 0.5s 0.3s cubic-bezier(.22, .68, 0, 1.35) both;
+        }
+
+        @keyframes bamali-pop {
+            from {
+                opacity: 0;
+                transform: scale(0.4);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .bamali-card-top h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .bamali-card-top .bamali-subtitle {
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ── Card Body ── */
+        .bamali-card-body {
+            padding: 42px 40px 36px;
+        }
+
+        /* ── Event Reminder Block ── */
+        .bamali-reminder {
+            background: linear-gradient(135deg, #f8f3ff, #fff5fb);
+            border: 1px solid rgba(107, 47, 160, 0.18);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-bottom: 32px;
+        }
+
+        .bamali-reminder-label {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--purple-light);
+            margin-bottom: 14px;
+        }
+
+        .bamali-reminder-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--purple-dark);
+            margin-bottom: 8px;
+        }
+
+        .bamali-reminder-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .bamali-reminder-row .bamali-icon {
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        /* ── Steps Section ── */
+        .bamali-steps-title {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--purple-light);
+            margin-bottom: 24px;
+        }
+
+        .bamali-step {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .bamali-step:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .bamali-step-num {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple-mid), var(--purple-light));
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+            box-shadow: 0 4px 16px rgba(107, 47, 160, 0.35);
+        }
+
+        .bamali-step-content .bamali-stitle {
+            font-weight: 700;
+            color: var(--purple-dark);
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .bamali-step-content .bamali-sdesc {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.65;
+        }
+
+        .bamali-step-content .bamali-sdesc strong {
+            color: var(--purple-mid);
+        }
+
+        /* ── Bank Info Box ── */
+        .bamali-bank-box {
+            background: #f8f3ff;
+            border: 1px solid rgba(107, 47, 160, 0.15);
+            padding: 14px 18px;
+            border-radius: 10px;
+            display: inline-block;
+            line-height: 2;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* ── Divider ── */
+        .bamali-divider {
+            border: none;
+            border-top: 1px solid #ececec;
+            margin: 32px 0 28px;
+        }
+
+        /* ── Social Section ── */
+        .bamali-social-section {
+            text-align: center;
+        }
+
+        .bamali-social-label {
+            font-size: 13px;
+            color: #aaa;
+            margin-bottom: 18px;
+        }
+
+        .bamali-social-links {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .bamali-social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #ffffff;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 13px;
+            transition: opacity 0.22s, transform 0.22s;
+        }
+
+        .bamali-social-btn.bamali-fb {
+            background: #1877F2;
+        }
+
+        .bamali-social-btn.bamali-ig {
+            background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+        }
+
+        .bamali-social-btn:hover {
+            opacity: 0.88;
+            transform: translateY(-2px);
+        }
+
+        /* ── Back Link ── */
+        .bamali-back-link {
+            display: block;
+            text-align: center;
+            margin-top: 26px;
+            color: var(--purple-light);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .bamali-back-link:hover {
+            color: var(--purple-dark);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 500px) {
+            .bamali-card-top {
+                padding: 36px 24px 32px;
+            }
+
+            .bamali-card-body {
+                padding: 30px 24px 28px;
+            }
+
+            .bamali-card-top h1 {
+                font-size: 26px;
+            }
+
+            .bamali-reminder {
+                padding: 18px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bamali-gracias-card">
+
+        <!-- ── HEADER ── -->
+        <div class="bamali-card-top">
+            <div class="bamali-checkmark">🌸</div>
+            <h1>¡Registro Confirmado!</h1>
+            <p class="bamali-subtitle">
+                Tu solicitud fue recibida con éxito.<br>
+                Sigue los pasos a continuación para asegurar tu lugar.
+            </p>
+        </div>
+
+        <!-- ── BODY ── -->
+        <div class="bamali-card-body">
+
+            <!-- Recordatorio del evento -->
+            <div class="bamali-reminder">
+                <div class="bamali-reminder-label">📌 Recuerda el evento</div>
+                <div class="bamali-reminder-row">
+                    <span class="bamali-icon">📅</span>
+                    <span>Jueves <strong>20 de marzo de 2026</strong></span>
+                </div>
+                <div class="bamali-reminder-row">
+                    <span class="bamali-icon">⏰</span>
+                    <span>9:00 AM (puntual)</span>
+                </div>
+                <div class="bamali-reminder-row">
+                    <span class="bamali-icon">📍</span>
+                    <span>Sinaloa 113, Colonia Roma, CDMX</span>
+                </div>
+                <div class="bamali-reminder-row">
+                    <span class="bamali-icon">🎤</span>
+                    <span>Mtra. Reyna López Rodríguez</span>
+                </div>
+            </div>
+
+            <!-- Pasos -->
+            <div class="bamali-steps-title">Pasos para confirmar tu lugar</div>
+
+            <div class="bamali-step">
+                <div class="bamali-step-num">1</div>
+                <div class="bamali-step-content">
+                    <div class="bamali-stitle">Realiza tu pago</div>
+                    <div class="bamali-sdesc">
+                        Transfiere a la cuenta de <strong>BBVA Bancomer</strong> (Cuenta de Cheques):
+                        <br>
+                        <span class="bamali-bank-box">
+                            🏦 <strong>CLABE:</strong> 012 180 0011 9826 9123<br>
+                            🔢 <strong>No. Cuenta:</strong> 011 982 6912
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bamali-step">
+                <div class="bamali-step-num">2</div>
+                <div class="bamali-step-content">
+                    <div class="bamali-stitle">Envía tu comprobante</div>
+                    <div class="bamali-sdesc">
+                        Manda el comprobante de pago a
+                        <a href="mailto:eventos@bamali.mx"
+                            style="color:#6b2fa0;font-weight:700;text-decoration:none;">eventos@bamali.mx</a>.
+                        Esto confirma tu lugar en el evento.
+                    </div>
+                </div>
+            </div>
+
+            <div class="bamali-step">
+                <div class="bamali-step-num">3</div>
+                <div class="bamali-step-content">
+                    <div class="bamali-stitle">¡Listo! Te esperamos el 20 de marzo</div>
+                    <div class="bamali-sdesc">
+                        Recibirás una confirmación una vez validado tu pago.
+                        ¡Nos vemos en el desayuno!
+                    </div>
+                </div>
+            </div>
+
+            <hr class="bamali-divider">
+
+            <!-- Redes sociales -->
+            <div class="bamali-social-section">
+                <p class="bamali-social-label">Síguenos para no perderte ninguna novedad del evento</p>
+                <div class="bamali-social-links">
+                    <a href="https://www.facebook.com/abogadasbamali/" target="_blank" rel="noopener noreferrer"
+                        class="bamali-social-btn bamali-fb">
+                        📘 Facebook
+                    </a>
+                    <a href="https://www.instagram.com/abogadasbamali/" target="_blank" rel="noopener noreferrer"
+                        class="bamali-social-btn bamali-ig">
+                        📸 Instagram
+                    </a>
+                </div>
+            </div>
+
+            <a href="https://bamali.mx" class="bamali-back-link">← Volver a bamali.mx</a>
+
+        </div><!-- /card-body -->
+    </div><!-- /card -->
+
+</body>
+
+</html>

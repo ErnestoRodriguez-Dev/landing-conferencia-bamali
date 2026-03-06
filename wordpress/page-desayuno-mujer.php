@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+/*
+ * Template Name: Desayuno Día de la Mujer 2026
+ * Template Post Type: page
+ */
+// Salir si se accede directamente
+if (!defined('ABSPATH'))
+    exit;
+?><!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -61,7 +69,6 @@
             pointer-events: none;
         }
 
-        /* Floating particles */
         .particle {
             position: absolute;
             border-radius: 50%;
@@ -142,7 +149,6 @@
             gap: 8px;
             background: linear-gradient(90deg, var(--rose), #e05580);
             color: white;
-            font-family: 'Inter', sans-serif;
             font-weight: 700;
             font-size: 11px;
             letter-spacing: 2.5px;
@@ -161,7 +167,6 @@
             position: relative;
             z-index: 2;
             color: var(--gold-light);
-            font-family: 'Inter', sans-serif;
             font-weight: 600;
             font-size: 13px;
             letter-spacing: 4px;
@@ -200,7 +205,6 @@
             font-weight: 300;
         }
 
-        /* Countdown & Stats row */
         .hero-stats {
             position: relative;
             z-index: 2;
@@ -242,7 +246,6 @@
             display: inline-block;
             background: linear-gradient(135deg, var(--gold) 0%, #e8b830 50%, var(--gold) 100%);
             color: var(--purple-dark);
-            font-family: 'Inter', sans-serif;
             font-weight: 800;
             font-size: 16px;
             letter-spacing: 1px;
@@ -276,10 +279,6 @@
         .btn-cta:hover {
             transform: translateY(-3px) scale(1.03);
             box-shadow: 0 14px 50px rgba(201, 162, 39, 0.7);
-        }
-
-        .btn-cta:active {
-            transform: translateY(0) scale(0.99);
         }
 
         .scroll-hint {
@@ -317,7 +316,7 @@
             }
         }
 
-        /* ─── DIVIDER ─── */
+        /* ─── WAVE ─── */
         .wave-divider {
             background: var(--purple-dark);
             line-height: 0;
@@ -328,7 +327,7 @@
             width: 100%;
         }
 
-        /* ─── MAIN CARD ─── */
+        /* ─── MAIN ─── */
         .main-content {
             background: var(--cream);
         }
@@ -339,7 +338,7 @@
             padding: 0 20px;
         }
 
-        /* ─── SECTION: DETALLES ─── */
+        /* ─── DETALLES ─── */
         .section-details {
             padding: 70px 0 50px;
         }
@@ -378,7 +377,6 @@
             max-width: 580px;
         }
 
-        /* Info cards */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -461,8 +459,7 @@
         .speaker-photo-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to right, transparent 55%, #0b0418 100%),
-                linear-gradient(to top, rgba(11, 4, 24, 0.65) 0%, transparent 45%);
+            background: linear-gradient(to right, transparent 55%, #0b0418 100%), linear-gradient(to top, rgba(11, 4, 24, 0.65) 0%, transparent 45%);
             pointer-events: none;
         }
 
@@ -599,25 +596,46 @@
             background: var(--gold);
         }
 
-        @media (max-width: 820px) {
-            .speaker-inner {
-                grid-template-columns: 1fr;
-            }
-
-            .speaker-photo-col {
-                height: 400px;
-            }
-
-            .speaker-photo-overlay {
-                background: linear-gradient(to bottom, transparent 45%, #0b0418 100%);
-            }
-
-            .speaker-content-col {
-                padding: 44px 28px;
-            }
+        /* ─── ESTADÍSTICAS ─── */
+        .section-counter {
+            background: linear-gradient(135deg, var(--purple-dark) 0%, #2d1050 50%, #1a0a2e 100%);
+            padding: 60px 0;
+            text-align: center;
         }
 
-        /* ─── LUGAR & PAGO ─── */
+        .counter-grid {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .counter-item .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 58px;
+            font-weight: 900;
+            color: var(--gold-light);
+            line-height: 1;
+            display: block;
+        }
+
+        .counter-item .label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+            margin-top: 6px;
+            display: block;
+        }
+
+        .counter-divider {
+            width: 1px;
+            background: rgba(255, 255, 255, 0.12);
+            align-self: stretch;
+        }
+
+        /* ─── LOGÍSTICA ─── */
         .section-logistics {
             padding: 70px 0 60px;
         }
@@ -687,45 +705,6 @@
             font-weight: 400;
         }
 
-        /* ─── COUNTER ─── */
-        .section-counter {
-            background: linear-gradient(135deg, var(--purple-dark) 0%, #2d1050 50%, #1a0a2e 100%);
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .counter-grid {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-
-        .counter-item .number {
-            font-family: 'Playfair Display', serif;
-            font-size: 58px;
-            font-weight: 900;
-            color: var(--gold-light);
-            line-height: 1;
-            display: block;
-        }
-
-        .counter-item .label {
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.55);
-            margin-top: 6px;
-            display: block;
-        }
-
-        .counter-divider {
-            width: 1px;
-            background: rgba(255, 255, 255, 0.12);
-            align-self: stretch;
-        }
-
         /* ─── FORM ─── */
         .section-form {
             padding: 70px 0 80px;
@@ -782,8 +761,7 @@
             margin-bottom: 8px;
         }
 
-        .form-group input,
-        .form-group select {
+        .form-group input {
             width: 100%;
             padding: 14px 18px;
             border: 2px solid #e8e0f5;
@@ -796,8 +774,7 @@
             outline: none;
         }
 
-        .form-group input:focus,
-        .form-group select:focus {
+        .form-group input:focus {
             border-color: var(--purple-light);
             background: white;
             box-shadow: 0 0 0 4px rgba(155, 89, 208, 0.12);
@@ -899,21 +876,26 @@
             letter-spacing: 0.5px;
         }
 
-        /* Responsive */
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 820px) {
+            .speaker-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .speaker-photo-col {
+                height: 420px;
+            }
+
+            .speaker-photo-overlay {
+                background: linear-gradient(to bottom, transparent 45%, #0b0418 100%);
+            }
+
+            .speaker-content-col {
+                padding: 44px 28px;
+            }
+        }
+
         @media (max-width: 600px) {
-            .speaker-card {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .speaker-info .topic {
-                padding-left: 0;
-                border-left: none;
-                border-top: 3px solid var(--gold);
-                padding-top: 10px;
-            }
-
             .form-card {
                 padding: 36px 24px;
             }
@@ -925,109 +907,77 @@
             .counter-divider {
                 display: none;
             }
-
-            .logo-img {
-                height: 55px;
-            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ═══════════════════════════════════ HERO ═══════════════════════════ -->
+    <!-- HERO -->
     <section class="hero">
         <div class="particle p1"></div>
         <div class="particle p2"></div>
         <div class="particle p3"></div>
         <div class="particle p4"></div>
-
         <div class="hero-logo-wrap">
-            <img src="logo.png" alt="Bamali – Abogadas Líderes de México" class="logo-img">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/logo-bamali.png"
+                alt="Bamali – Abogadas Líderes de México" class="logo-img"
+                onerror="this.src='https://bamali.mx/wp-content/uploads/logo-bamali.png'">
         </div>
-
-        <div class="badge-dia-mujer">
-            <span class="symbol">♀</span>
-            Día Internacional de la Mujer
-        </div>
-
+        <div class="badge-dia-mujer"><span class="symbol">♀</span> Día Internacional de la Mujer</div>
         <p class="hero-event-type">Desayuno Conmemorativo</p>
-
         <h1 class="hero-title">
             Los Conflictos Individuales<br>
             <span>de Seguridad Social</span>
         </h1>
-
         <p class="hero-subtitle">
-            Conferencia magistral en conmemoración al <strong style="color: var(--gold-light);">Día Internacional de la
+            Conferencia magistral en conmemoración al <strong style="color:var(--gold-light);">Día Internacional de la
                 Mujer</strong>.
             Un espacio de reflexión, aprendizaje y sororidad para las Bamalistas.
         </p>
-
         <div class="hero-stats">
-            <div class="stat-pill">
-                <span class="icon">📅</span>
-                <span><strong>20 de Marzo&nbsp;</strong>· 2026</span>
+            <div class="stat-pill"><span class="icon">📅</span><span><strong>20 de Marzo&nbsp;</strong>· 2026</span>
             </div>
-            <div class="stat-pill">
-                <span class="icon">⏰</span>
-                <span><strong>9:00 AM</strong></span>
-            </div>
-            <div class="stat-pill">
-                <span class="icon">📍</span>
-                <span>Col. Roma, CDMX</span>
-            </div>
+            <div class="stat-pill"><span class="icon">⏰</span><span><strong>9:00 AM</strong></span></div>
+            <div class="stat-pill"><span class="icon">📍</span><span>Col. Roma, CDMX</span></div>
         </div>
-
         <div class="hero-cta">
             <a href="#registro" class="btn-cta" id="ctaHeroBtn">¡Quiero Reservar Mi Lugar!</a>
         </div>
-
         <div class="scroll-hint">
-            <div class="scroll-arrow"></div>
-            Más información
+            <div class="scroll-arrow"></div>Más información
         </div>
     </section>
 
-    <!-- Wave divider -->
+    <!-- Wave -->
     <div class="wave-divider" style="background:#1a0a2e;">
         <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg">
             <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="#fdfaf5" />
         </svg>
     </div>
 
-    <!-- ═════════════════════════════════ DETALLES ══════════════════════════ -->
+    <!-- DETALLES -->
     <section class="section-details main-content">
         <div class="container">
             <span class="section-label">Detalles del evento</span>
             <h2 class="section-title">Un desayuno <em>muy</em> especial<br>para las mujeres de ley</h2>
-            <p class="section-intro">
-                Acompáñanos en esta celebración única donde el conocimiento jurídico se une a la conmemoración del
-                Día Internacional de la Mujer. Este año prometemos un evento más grande y poderoso que nunca.
-            </p>
-
+            <p class="section-intro">Acompáñanos en esta celebración única donde el conocimiento jurídico se une a la
+                conmemoración del Día Internacional de la Mujer. Este año prometemos un evento más grande y poderoso que
+                nunca.</p>
             <div class="info-grid">
-                <div class="info-card" id="cardFecha">
-                    <span class="card-icon">📅</span>
-                    <span class="card-label">Fecha</span>
+                <div class="info-card"><span class="card-icon">📅</span><span class="card-label">Fecha</span>
                     <div class="card-value">20 de Marzo</div>
                     <div class="card-sub">2026 · Jueves</div>
                 </div>
-                <div class="info-card" id="cardHora">
-                    <span class="card-icon">⏰</span>
-                    <span class="card-label">Hora</span>
+                <div class="info-card"><span class="card-icon">⏰</span><span class="card-label">Hora</span>
                     <div class="card-value">9:00 AM</div>
                     <div class="card-sub">Puntual</div>
                 </div>
-                <div class="info-card" id="cardLugar">
-                    <span class="card-icon">🏛️</span>
-                    <span class="card-label">Lugar</span>
+                <div class="info-card"><span class="card-icon">🏛️</span><span class="card-label">Lugar</span>
                     <div class="card-value">Sinaloa 113</div>
                     <div class="card-sub">Colonia Roma</div>
                 </div>
-                <div class="info-card" id="cardTipo">
-                    <span class="card-icon">🌸</span>
-                    <span class="card-label">Tipo de evento</span>
+                <div class="info-card"><span class="card-icon">🌸</span><span class="card-label">Tipo de evento</span>
                     <div class="card-value">Desayuno</div>
                     <div class="card-sub">Día Internacional de la Mujer</div>
                 </div>
@@ -1035,28 +985,22 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════ CONFERENCISTA ════════════════════════ -->
+    <!-- CONFERENCISTA -->
     <section class="section-speaker" id="speakerCard">
         <div class="speaker-inner">
-            <!-- FOTO -->
             <div class="speaker-photo-col">
-                <img src="reyna.jpg" alt="Mtra. Reyna López Rodríguez – Conferencista Magistral">
+                <img src="https://bamali.mx/wp-content/uploads/reyna-lopez-rodriguez.jpg"
+                    alt="Mtra. Reyna López Rodríguez – Conferencista Magistral">
                 <div class="speaker-photo-overlay"></div>
                 <div class="speaker-photo-frame"></div>
             </div>
-            <!-- CONTENIDO -->
             <div class="speaker-content-col">
-                <div class="speaker-eyebrow">
-                    <span class="eline"></span>
-                    <span>Conferencista Magistral</span>
-                </div>
+                <div class="speaker-eyebrow"><span class="eline"></span><span>Conferencista Magistral</span></div>
                 <h2 class="speaker-name">Mtra. Reyna<br>López Rodríguez</h2>
                 <p class="speaker-cred">Maestra en Derecho &middot; Especialista en Seguridad Social</p>
                 <div class="speaker-divider-line"></div>
                 <p class="speaker-topic-eyebrow">Tema de la conferencia</p>
-                <p class="speaker-topic-text">
-                    &ldquo;Los Conflictos Individuales<br>de Seguridad Social&rdquo;
-                </p>
+                <p class="speaker-topic-text">&ldquo;Los Conflictos Individuales<br>de Seguridad Social&rdquo;</p>
                 <div class="speaker-pills">
                     <span class="speaker-pill"><span class="dot"></span>Derecho Laboral</span>
                     <span class="speaker-pill"><span class="dot"></span>Seguridad Social</span>
@@ -1066,43 +1010,33 @@
         </div>
     </section>
 
-    <!-- ═══════════════════════════════ ESTADÍSTICAS ═══════════════════════ -->
+    <!-- ESTADÍSTICAS -->
     <section class="section-counter">
         <div class="container">
             <div class="counter-grid">
-                <div class="counter-item">
-                    <span class="number">598</span>
-                    <span class="label">Bamalistas</span>
+                <div class="counter-item"><span class="number">598</span><span class="label">Bamalistas</span></div>
+                <div class="counter-divider"></div>
+                <div class="counter-item"><span class="number">1,000</span><span class="label">Alcance general</span>
                 </div>
                 <div class="counter-divider"></div>
-                <div class="counter-item">
-                    <span class="number">1,000</span>
-                    <span class="label">Alcance general</span>
-                </div>
-                <div class="counter-divider"></div>
-                <div class="counter-item">
-                    <span class="number">8°</span>
-                    <span class="label">Edición</span>
-                </div>
+                <div class="counter-item"><span class="number">8°</span><span class="label">Edición</span></div>
             </div>
         </div>
     </section>
 
-    <!-- ═══════════════════════════════ LOGÍSTICA ═══════════════════════════ -->
+    <!-- LOGÍSTICA -->
     <section class="section-logistics main-content">
         <div class="container">
             <span class="section-label">Información práctica</span>
-            <h2 class="section-title" style="margin-top: 18px;">Cómo confirmar<br>tu asistencia</h2>
-
+            <h2 class="section-title" style="margin-top:18px;">Cómo confirmar<br>tu asistencia</h2>
             <div class="logistics-grid">
-                <div class="logistics-box lugar" id="boxLugar">
+                <div class="logistics-box lugar">
                     <div class="box-icon">📍</div>
                     <div class="box-title">Lugar del evento</div>
                     <div class="box-content">Sinaloa 113<br>Colonia Roma, CDMX</div>
                     <div class="box-sub">Jueves 20 de marzo · 9:00 AM</div>
                 </div>
-
-                <div class="logistics-box pago" id="boxPago">
+                <div class="logistics-box pago">
                     <div class="box-icon">🏦</div>
                     <div class="box-title">Datos bancarios</div>
                     <div class="box-content">
@@ -1115,8 +1049,7 @@
                     </div>
                     <div class="box-sub">Guarda tu comprobante para enviarlo</div>
                 </div>
-
-                <div class="logistics-box comprobante" id="boxComprobante">
+                <div class="logistics-box comprobante">
                     <div class="box-icon">📧</div>
                     <div class="box-title">Envía tu comprobante</div>
                     <div class="box-content">Envía tu comprobante a:<br><a href="mailto:eventos@bamali.mx"
@@ -1128,58 +1061,43 @@
         </div>
     </section>
 
-    <!-- ════════════════════════════════ FORM ═══════════════════════════════ -->
+    <!-- FORMULARIO -->
     <section class="section-form main-content" id="registro">
         <div class="container">
-            <div class="form-card" id="formCard">
+            <div class="form-card">
                 <div class="form-header">
                     <div class="section-label">Confirma tu asistencia</div>
-                    <h2 class="title" style="margin-top: 18px;">Reserva tu lugar ahora</h2>
+                    <h2 class="title" style="margin-top:18px;">Reserva tu lugar ahora</h2>
                     <p class="sub">Completa el formulario y el equipo Bamali se pondrá en contacto contigo con los datos
                         de pago.</p>
                 </div>
-
                 <form id="registroForm">
                     <div class="form-row">
-                        <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
-                        </div>
-                        <div class="form-group">
-                            <label for="apellido">Apellido</label>
-                            <input type="text" id="apellido" name="apellido" required placeholder="Tu apellido">
-                        </div>
+                        <div class="form-group"><label for="nombre">Nombre</label><input type="text" id="nombre"
+                                name="nombre" required placeholder="Tu nombre"></div>
+                        <div class="form-group"><label for="apellido">Apellido</label><input type="text" id="apellido"
+                                name="apellido" required placeholder="Tu apellido"></div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="email">Correo electrónico</label>
-                        <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="telefono">Teléfono / WhatsApp</label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="10 dígitos">
-                    </div>
-
+                    <div class="form-group"><label for="email">Correo electrónico</label><input type="email" id="email"
+                            name="email" required placeholder="correo@ejemplo.com"></div>
+                    <div class="form-group"><label for="telefono">Teléfono / WhatsApp</label><input type="tel"
+                            id="telefono" name="telefono" placeholder="10 dígitos"></div>
                     <input type="hidden" name="_subject" value="Registro Desayuno Día de la Mujer 2026 – Bamali">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="evento"
                         value="Desayuno Día Internacional de la Mujer – 20 de Marzo 2026">
-
-                    <button type="submit" class="btn-submit" id="submitBtn">
-                        🌸 &nbsp; ¡Confirmar Asistencia!
-                    </button>
-
+                    <button type="submit" class="btn-submit" id="submitBtn">🌸 &nbsp; ¡Confirmar Asistencia!</button>
                     <div id="formStatus"></div>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- ════════════════════════════════ FOOTER ═════════════════════════════ -->
+    <!-- FOOTER -->
     <footer class="footer">
-        <img src="logo.png" alt="Bamali" onerror="this.style.display='none'">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/logo-bamali.png" alt="Bamali"
+            onerror="this.src='https://bamali.mx/wp-content/uploads/logo-bamali.png'; this.onerror=null;">
         <div class="footer-links">
             <a href="https://bamali.mx" target="_blank">bamali.mx</a>
             <a href="https://www.facebook.com/abogadasbamali/" target="_blank">Facebook</a>
@@ -1189,41 +1107,29 @@
     </footer>
 
     <script>
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                const t = document.querySelector(a.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
-
-        // Form submission
         document.getElementById('registroForm').addEventListener('submit', function (e) {
             e.preventDefault();
-
             const btn = document.getElementById('submitBtn');
             const status = document.getElementById('formStatus');
-
             btn.disabled = true;
             btn.textContent = 'Enviando...';
             status.className = 'loading';
             status.style.display = 'block';
             status.textContent = '⏳ Procesando tu registro...';
-
-            const formData = new FormData(this);
-
             fetch('https://formsubmit.co/ajax/eventos@bamali.mx', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
-                body: formData
+                body: new FormData(this)
             })
                 .then(r => r.json())
-                .then(data => {
-                    window.location.href = 'https://bamali.mx/dia-de-la-mujer-gracias/';
-                })
+                .then(() => { window.location.href = 'https://bamali.mx/dia-de-la-mujer-gracias/'; })
                 .catch(err => {
                     console.error(err);
                     status.className = 'error';
@@ -1233,7 +1139,6 @@
                 });
         });
     </script>
-
 </body>
 
 </html>
